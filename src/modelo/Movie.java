@@ -19,7 +19,8 @@ public class Movie {
     private int annioEstreno;
     private int enExhibicion; 
 
-    public Movie(String nombre, String director, String paisProcedencia, String clasificacion, int annioEstreno, int enExhibicion) {
+    public Movie(String nombre, String director, String paisProcedencia, String clasificacion,
+            int annioEstreno, int enExhibicion) {
         this.nombre = nombre;
         this.director = director;
         this.paisProcedencia = paisProcedencia;
