@@ -79,6 +79,8 @@ public class Consulta extends JFrame{
         lblPais.setBounds(10,100,ANCHOC,ALTOC);
         lblClasificacion.setBounds(10,140,ANCHOC,ALTOC);
         lblAnio.setBounds(10,180,ANCHOC,ALTOC);
+        lblEnexhib.setBounds(10, 210, ANCHOC, ALTOC);
+    
     }
     
     public final void formulario(){
@@ -114,17 +116,18 @@ public class Consulta extends JFrame{
         nombre.setBounds(140,10,ANCHOC,ALTOC);
         director.setBounds(140,60,ANCHOC,ALTOC);
         pais.setBounds(140,100,ANCHOC,ALTOC);
-        annio.setBounds(140,140,ANCHOC,ALTOC);
-        si.setBounds(140,180,50,ALTOC);
-        no.setBounds(210,180,50,ALTOC);
+        clasficacion.setBounds(140,140,ANCHOC,ALTOC);
+        annio.setBounds(140,180,ANCHOC,ALTOC);
+        si.setBounds(140,210,50,ALTOC);
+        no.setBounds(210,210,50,ALTOC);
         
         buscar.setBounds(300,10,ANCHOC,ALTOC);
-        insertar.setBounds(10,210,ANCHOC,ALTOC);
-        actualizar.setBounds(150,210,ANCHOC,ALTOC);
-        eliminar.setBounds(300,210,ANCHOC,ALTOC);
+        insertar.setBounds(10,250,ANCHOC,ALTOC);
+        actualizar.setBounds(150,250,ANCHOC,ALTOC);
+        eliminar.setBounds(300,250,ANCHOC,ALTOC);
         limpiar.setBounds(450,10,ANCHOC,ALTOC);
         resultados= new JTable();
-        table.setBounds(10,250,500,200);
+        table.setBounds(10,290,500,200);
         table.add(new JScrollPane(resultados));
         
     }
