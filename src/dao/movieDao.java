@@ -20,7 +20,7 @@ import modelo.Movie;
  */
 public class movieDao implements Metodos<Movie>{
     
-     private static final String SQL_INSERT="INSERT INTO movie (nombre,director,pais,clasificacion,anio,en_proyeccion)VALUES(?,?,?,?,?,?,?)";
+    private static final String SQL_INSERT="INSERT INTO movie (nombre,director,pais,clasificacion,anio,en_proyeccion)VALUES(?,?,?,?,?,?)";
     private static final String SQL_UPDATE="UPDATE movie SET en_proyeccion=? WHERE nombre=?";
     private static final String SQL_DELETE="DELETE FROM movies WHERE nombre=?";
     private static final String SQL_READ="SELECT * FROM movies WHERE nombre=?";
@@ -73,7 +73,8 @@ public class movieDao implements Metodos<Movie>{
         
         try{
             ps = con.getCnx().prepareStatement(SQL_UPDATE);
-            ps.setString(1, c.getNombre());
+            ps.setString(1, Integer.toString(c.EnExistencia()));
+            ps.setString(2, c.getNombre());
             if (ps.executeUpdate()>0)
                 return true;
             
@@ -99,8 +100,8 @@ public class movieDao implements Metodos<Movie>{
             rs= ps.executeQuery();
             
             while(rs.next()){
-                m=new Movie(rs.getString(1),rs.getString(2),
-                rs.getString(3),rs.getString(4),rs.getInt(5), rs.getInt(6));
+                m=new Movie(rs.getString(2),rs.getString(3),
+                rs.getString(4),rs.getString(5),rs.getInt(6), rs.getInt(7));
             }
             rs.close();
         
@@ -123,8 +124,8 @@ public class movieDao implements Metodos<Movie>{
             s=con.getCnx().prepareStatement(SQL_READALL);
             rs=s.executeQuery(SQL_READALL);
             while(rs.next()){
-                all.add(new Movie(rs.getString(1),rs.getString(2),
-                        rs.getString(3),rs.getString(4),rs.getInt(5), rs.getInt(6)));
+                all.add(new Movie(rs.getString(2),rs.getString(3),
+                        rs.getString(4),rs.getString(5),rs.getInt(6), rs.getInt(7)));
             }
             rs.close();
             
